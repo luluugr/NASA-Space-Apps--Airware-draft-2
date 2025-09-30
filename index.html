@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AirAware - Calidad del Aire</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#recomendaciones">Recomendaciones</a></li>
+            <li><a href="#predicciones">Predicciones</a></li>
+            <li><a href="#perfil">Mi Cuenta</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Sección de introducción / bienvenida -->
+    <section class="intro">
+        <h2>Bienvenido a AirAware</h2>
+        <p>Respira tranquilo y toma decisiones inteligentes sobre tu salud.</p>
+    </section>
+
+    <!-- Sección principal: AQI actual y recomendaciones -->
+    <section id="inicio" class="pantalla-inicio">
+        <div class="titulo-ubicacion">
+            <h1>Calidad del Aire Actual</h1>
+            <p id="ubicacion">Ubicación: <span id="estadoUsuario">Cargando...</span></p>
+        </div>
+
+        <div class="principal-container">
+            <!-- Sección izquierda: recomendaciones generales -->
+            <div class="recomendaciones-generales">
+                <h2>Recomendaciones generales</h2>
+                <ul>
+                    <li>Evita ejercicio intenso al aire libre.</li>
+                    <li>Mantén ventanas cerradas si AQI alto.</li>
+                    <li>Usa mascarilla si eres sensible.</li>
+                </ul>
+            </div>
+
+            <!-- Sección derecha: velocímetro -->
+            <div class="velocimetro-container">
+                <div class="escala-aqi">
+                    <!-- Colores de AQI -->
+                    <div class="color-bueno"></div>
+                    <div class="color-moderado"></div>
+                    <div class="color-salud"></div>
+                    <div class="color-malo"></div>
+                    <div class="color-muy-malo"></div>
+                    <div class="color-peligroso"></div>
+                </div>
+
+                <div class="velocimetro">
+                    <div class="velocimetro-base">
+                        <div class="aguja" id="aguja"></div>
+                    </div>
+                    <p class="aqi-valor" id="aqi-valor">-- AQI</p>
+                </div>
+
+                <p id="calidad-aire">Calidad de aire: --</p>
+                <p id="estado-salud">Estado de salud: <span id="emoji">😐</span></p>
+                <button id="conocerMasBtn">Conocer más</button>
+
+                <div id="graficoContaminantes" class="grafico-oculto">
+                    <!-- Aquí se colocarán las gráficas de cada contaminante -->
+                    <p>Gráficas de contaminantes aparecerán aquí.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flecha incentivo -->
+        <div class="bajar">
+            <span>⬇️</span>
+        </div>
+    </section>
+
+    <!-- Sección predicciones -->
+    <section id="predicciones" class="predicciones">
+        <div class="descripcion-predicciones" id="descPredicciones">
+            <p>Aquí podrás ver la predicción de calidad del aire para los próximos 3 días.</p>
+        </div>
+
+        <div class="dias-prediccion">
+            <div class="dia" id="dia1">
+                <p class="nombre-dia">Wed</p>
+                <p class="emoji-dia">😐</p>
+                <p class="aqi-dia">80 AQI</p>
+                <p class="prob-dia">80%</p>
+                <p class="calidad-dia">Moderado</p>
+            </div>
+            <div class="dia" id="dia2">
+                <p class="nombre-dia">Thu</p>
+                <p class="emoji-dia">😐</p>
+                <p class="aqi-dia">75 AQI</p>
+                <p class="prob-dia">70%</p>
+                <p class="calidad-dia">Moderado</p>
+            </div>
+            <div class="dia" id="dia3">
+                <p class="nombre-dia">Fri</p>
+                <p class="emoji-dia">😐</p>
+                <p class="aqi-dia">90 AQI</p>
+                <p class="prob-dia">65%</p>
+                <p class="calidad-dia">Moderado</p>
+            </div>
+        </div>
+
+        <button id="verMasPredicciones">Ver más</button>
+        <div id="prediccionesAdicionales" class="grafico-oculto">
+            <p>Predicciones adicionales aparecerán aquí.</p>
+        </div>
+    </section>
+
+    <!-- Sección perfil / registro -->
+    <section id="perfil" class="perfil">
+        <h2>Mi Cuenta</h2>
+        <div id="usuarioNoLogueado">
+            <p>No tienes una cuenta? <a href="#" id="mostrarRegistro">Regístrate</a></p>
+        </div>
+
+        <div id="formRegistro" class="form-oculto">
+            <form id="registroForm">
+                <label>Nombre:</label>
+                <input type="text" id="nombre" required>
+                <label>Apellido:</label>
+                <input type="text" id="apellido" required>
+                <label>Edad:</label>
+                <input type="number" id="edad" required>
+                <label>Estado (EUA):</label>
+                <input type="text" id="estado" required>
+                <label>Email:</label>
+                <input type="email" id="email" required>
+                <label>Contraseña:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+
+        <div id="usuarioLogueado" class="form-oculto">
+            <p>Bienvenido, <span id="nombreUsuario"></span></p>
+            <p>Estado: <span id="estadoUsuarioLogueado"></span></p>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
 
