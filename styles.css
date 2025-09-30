@@ -1,70 +1,130 @@
+/* ===== Body y tipografía ===== */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f4f0;
     margin: 0;
     padding: 0;
-    background: #f0f4f0;
 }
 
-/* Header */
+/* ===== Header y Navbar ===== */
 header {
     background-color: #002349;
     padding: 15px 0;
 }
-header nav ul {
-    display: flex;
-    justify-content: center;
+
+nav ul {
     list-style: none;
+    display: flex;
     gap: 20px;
+    justify-content: center;
     margin: 0;
     padding: 0;
 }
-header nav ul li a {
-    color: white;
+
+nav a {
     text-decoration: none;
+    color: #fff;
     font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
 }
 
-/* Layout principal */
-.pantalla-inicio .principal-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
+nav a:hover {
+    background-color: #004080;
+}
+
+/* ===== Introducción ===== */
+.intro {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* ===== Sección principal ===== */
+.pantalla-inicio {
     margin: 20px auto;
-    gap: 20px;
 }
 
-/* Recomendaciones izquierda */
+.principal-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* ===== Recomendaciones generales (izquierda) ===== */
 .recomendaciones-generales {
-    flex: 1;
-    background: #ffffffcc;
+    max-width: 300px;
+    background-color: #BAC095;
     padding: 15px;
     border-radius: 10px;
+    color: #fff;
 }
 
-/* Velocímetro derecha */
+.recomendaciones-generales h2 {
+    margin-top: 0;
+}
+
+.recomendaciones-generales ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recomendaciones-generales li {
+    margin-bottom: 10px;
+}
+
+/* ===== Velocímetro (derecha) ===== */
 .velocimetro-container {
-    flex: 1;
-    background: #ffffffcc;
-    padding: 15px;
-    border-radius: 10px;
+    max-width: 300px;
     text-align: center;
 }
+
+.velocimetro-wrapper {
+    position: relative;
+}
+
+.escala-aqi {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin: 0 auto -30px auto; 
+    position: relative;
+    z-index: 2;
+}
+
+.escala-aqi div {
+    flex: 1;
+    height: 15px;
+}
+
+.color-bueno { background: #00e400; }
+.color-moderado { background: #ffff00; }
+.color-salud { background: #ff7e00; }
+.color-malo { background: #ff0000; }
+.color-muy-malo { background: #8f3f97; }
+.color-peligroso { background: #7e0023; }
 
 .velocimetro {
     width: 250px;
     height: 125px;
     margin: 0 auto;
     position: relative;
+    z-index: 1;
 }
 
 .velocimetro-base {
     width: 100%;
     height: 100%;
-    background-color: #ddd;
+    background: #ddd;
     border-top-left-radius: 125px;
     border-top-right-radius: 125px;
-    position: relative;
     overflow: hidden;
+    position: relative;
 }
 
 .aguja {
@@ -81,30 +141,99 @@ header nav ul li a {
 
 .aqi-valor, #calidad-aire, #estado-salud {
     margin-top: 10px;
+    font-weight: bold;
 }
 
-/* Flecha incentivo */
+button {
+    padding: 8px 12px;
+    margin-top: 10px;
+    border: none;
+    background-color: #004080;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #002349;
+}
+
+/* Grafico oculto inicialmente */
+.grafico-oculto {
+    display: none;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px dashed #004080;
+    border-radius: 5px;
+}
+
+/* ===== Flecha incentivo ===== */
 .bajar {
     text-align: center;
     font-size: 2rem;
     margin: 20px 0;
 }
 
-/* Predicciones */
-.dias-prediccion {
+/* ===== Predicciones ===== */
+.predicciones {
     display: flex;
-    gap: 20px;
     justify-content: center;
-    margin-top: 15px;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
-.dia {
-    background: #ffffffcc;
+
+.descripcion-predicciones {
+    max-width: 250px;
+    background-color: #BAC095;
     padding: 10px;
     border-radius: 10px;
+    color: #fff;
     text-align: center;
 }
 
-/* Formulario registro */
-.form-oculto { display: none; }
-.grafico-oculto { display: none; }
+.dias-prediccion {
+    display: flex;
+    gap: 10px;
+}
 
+.dia {
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 70px;
+}
+
+/* ===== Mis Recomendaciones ===== */
+.mis-recomendaciones {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.mis-recomendaciones h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+/* ===== Perfil / Registro ===== */
+.perfil {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 15px;
+    background-color: #BAC095;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.form-oculto {
+    display: none;
+}
+
+.perfil form input {
+    width: 100%;
+    padding: 6px;
+    margin: 5px 0 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
